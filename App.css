@@ -1,0 +1,251 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.queueing-system {
+  font-family: 'Arial', sans-serif;
+  margin: 40px auto;
+  max-width: 900px;
+  padding: 20px;
+  background-color: #f0f4f8;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+/* Title Styles */
+.queueing-system h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  letter-spacing: 1.5px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  text-align: center;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  animation: pulse 3s ease-in-out infinite; /* Looping animation */
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05); /* Slightly larger */
+    opacity: 0.7; /* Slightly fade */
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Button Styles */
+.queueing-system button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.queueing-system button:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px);
+}
+
+.queueing-system button:active {
+  transform: translateY(0);
+  background-color: #004080;
+}
+
+/* Grid Styles */
+.queue-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.queue-grid .task {
+  width: 40px;
+  height: 40px;
+  background-color: #555;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.queue-grid .task.high-priority {
+  background-color: #ff4d4d;
+  animation: pulse 1.5s infinite;
+}
+
+.queue-grid .task:hover {
+  transform: scale(1.1);
+}
+
+/* Queue Box Styles */
+.queue-box {
+  border: 2px solid #007bff;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  transition: box-shadow 0.2s;
+}
+
+.queue-box:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Queue Titles */
+.queue-box h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Loader Progress Bar */
+.loader {
+  height: 5px;
+  background-color: #ff4747;
+  border-radius: 5px;
+  transition: width 0.4s ease;
+  margin-top: 5px;
+}
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Grid of 8x8 tasks */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(8, 40px);
+  grid-template-rows: repeat(8, 40px);
+  gap: 2px;
+  margin-top: 20px;
+}
+
+/* Task boxes */
+.task {
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2px;
+}
+
+.task-high {
+  background-color: red;
+}
+
+.task-regular {
+  background-color: black;
+}
+
+/* Queues container */
+.queues {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  justify-content: space-between; /* Space queues nicely */
+}
+
+.queue-box {
+  border: 2px solid lightblue; /* Light blue border */
+  padding: 15px;
+  min-height: 60px;
+  position: relative;
+  background-color: rgba(173, 216, 230, 0.2); /* Soft light blue background with transparency */
+  border-radius: 10px; /* Rounded corners for a modern look */
+  box-shadow: 0 4px 10px rgba(173, 216, 230, 0.3); /* Subtle shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover animation */
+}
+
+.queue-box:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 8px 16px rgba(173, 216, 230, 0.4); /* More prominent shadow on hover */
+}
+
+.high-priority {
+  border: 2px solid lightgreen;
+  border-radius: 10px; /* Rounded corners */
+  padding: 10px; /* Add some padding for spacing */
+  background-color: rgba(144, 238, 144, 0.2); /* Light green with slight transparency */
+  box-shadow: 0 4px 8px rgba(0, 128, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Loader */
+.loader {
+  background-color: lightblue;
+  height: 5px;
+  width: 0;
+  margin-top: 2px;
+  transition: width 0.3s ease;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(173, 216, 230, 0.7); /* Subtle shadow effect */
+}
